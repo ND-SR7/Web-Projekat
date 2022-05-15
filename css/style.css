@@ -1,0 +1,345 @@
+/*HOME*/
+body{
+    color: white;
+    background-color: whitesmoke;
+    padding: 0px !important;
+    font-family: 'JetBrains Mono', monospace;
+}
+header{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+}
+#logo{
+    width: 192px;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+nav ul{
+    display: flex !important;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: mediumseagreen;
+    font-size: 16px;
+}
+nav ul li:hover{
+    color: aqua;
+}
+nav ul li .active-page{
+    color: black;
+}
+nav ul li a{
+    text-decoration: none;
+    cursor: pointer;
+}
+/*begin LOGIN and REGISTER*/
+#nav-login{
+    cursor: pointer;
+}
+#login, #register{
+    color: black;
+    scrollbar-width: none;      /*Firefox*/
+    -ms-overflow-style: none;   /*IE and Edge*/
+}
+#login::-webkit-scrollbar, #register::-webkit-scrollbar{
+    display: none;              /*Chrome, Safari and Opera*/
+}
+
+#login form, #register form{
+    padding: 10px;
+}
+#login form img, #register form img{
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+#login form span, #register form span{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#register{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/*end LOGIN and REGISTER*/
+main{
+    color: black;
+}
+.card-img{
+    width: 30vw;
+    margin: 10px;
+}
+table{
+    width: 80vw !important;
+    margin: 0px auto;
+}
+footer{
+    display: flex;
+}
+#left-foot{
+    width: -moz-available;          /* Mozilla-based browsers*/
+    width: -webkit-fill-available;  /* WebKit-based browsers*/
+    width: fill-available;          /* Chrome-based browsers*/
+}
+footer .w3-container{
+    padding: 0px;
+    background-color: gray;
+}
+footer ul{
+    display: grid !important;
+    font-size: 16px;
+    padding: 0px 10px;
+}
+footer ul li:hover{
+    color: aqua;
+}
+footer ul li .active-page{
+    color: black;
+}
+footer ul li a{
+    text-decoration: none;
+}
+#copyright:hover{
+    color: black;
+}
+/*SEARCH*/
+#search{
+    display: flex;
+    flex-wrap: nowrap;
+    box-sizing: content-box;
+    width: 13vw;
+    margin: 0px auto;
+    padding-bottom: 5px;
+}
+#search input{
+    width: 70%;
+    min-width: 76px;
+    margin-left: -10px;
+    border: 2px solid mediumseagreen;
+}
+#search i{
+    color: mediumseagreen;
+}
+#search-btn{
+    cursor: pointer;
+}
+#search-result{
+    margin: 10px auto;
+    display: flex;
+    
+    justify-content: space-evenly;
+    text-align: center;
+}
+#search-result .w3-card-4{
+    background-color: white;
+    max-width: 370px;
+    cursor: pointer;
+}
+#search-result h5{
+    padding: 10px;
+    background-color: mediumseagreen;
+}
+#search-result img{
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+#search-result span{
+    color: black;
+    padding: 0px 10px;
+}
+/*end SEARCH*/
+button{
+    color: white;
+    background-color: mediumseagreen;
+    border: none;
+}
+/*COURSE*/
+#course-info{
+    text-align: center;
+}
+#course-info img{
+    width: 40vw;
+}
+#course-desc p{
+    text-align: justify;
+    padding: 0 10vw;
+}
+#add-info{
+    text-align: left;
+}
+#final-info p{
+    text-align: right !important;
+}
+.green{
+    color: mediumseagreen;
+}
+hr{
+    width: 80%;
+    margin: 0px auto;
+    border: 1px solid black;
+}
+#course-desc button{
+    display: block;
+    margin: 10px 10vw;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+/*COURSE EDIT*/ /*USER EDIT*/
+#c-edit-main h1, #u-edit-main h1{
+    text-align: center;
+}
+#c-edit-main form, #u-edit-main form{
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+}
+#c-edit-main input, #u-edit-main input{
+    margin-bottom: 10px;
+}
+button{
+    cursor: pointer;
+}
+.delete-btn{
+    color: white;
+    background-color: brown;
+    display: block;
+    margin: 20px auto 0px;
+}
+label{
+    color: mediumseagreen;
+    font-weight: 600;
+}
+/*ADMIN*/
+#main-admin{
+    text-align: center;
+}
+#main-admin .w3-card-2{
+    width: 50vw;
+    min-width: 200px;
+    margin: 10px auto;
+}
+#users-list i{
+    color: mediumseagreen;
+}
+#main-admin .w3-card-2 a{
+    text-decoration: none;
+}
+/*USER*/
+#main-user{
+    text-align: center;
+}
+#main-user .w3-container{
+    width: 50%;
+    margin: 10px auto;
+}
+#main-user img{
+    width: 205px;
+    padding: 10px 0px;
+}
+#main-user p{
+    text-align: center;
+    font-size: 16px;
+}
+#info-wrap{
+    display: table;
+    margin: 0px auto;
+}
+#edit-user-btn{
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+/*SHOP CART*/
+#cart{
+    display: block;
+    width: 50%;
+    margin: 10px auto;
+}
+#cart ul li, #cart p{
+    font-size: 17px;
+}
+.cart-course-name{
+    color: mediumseagreen;
+}
+.cart-course-price{
+    display: block;
+    text-align: right;
+}
+.cart-remove-btn{
+    border-radius: 50%;
+    margin-left: 20px;
+}
+#cart hr{
+    width: 100%;
+}
+
+/*RESPONSIVE*/
+
+@media screen and (max-width: 1200px){
+    header{
+        display: block;
+        text-align: center;
+    }
+    nav{
+        width: 30vw;
+        margin: 0px auto;
+    }
+    nav ul{
+        display: grid !important;
+        width: auto !important;
+    }
+    nav ul li{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    #search-result{
+        flex-direction: column;
+        align-items: center;
+    }
+    #search-result .w3-card-4{
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 615px){
+    /*HOME*/
+    .w3-container{
+        padding: 0px;
+    }
+    header h1{
+        display: none;
+    }
+    nav{
+        padding: 0px !important;
+    }
+    #main h1{
+        display: none;
+    }
+    #search input{
+        margin-left: -20px;
+    }
+    .w3-table th:first-child, .w3-table td:first-child, .w3-table-all th:first-child, .w3-table-all td:first-child{
+        padding-left: 0px;
+    }
+    .w3-table td, .w3-table th, .w3-table-all td, .w3-table-all th{
+        padding: 8px 0px;
+    }
+    table thead tr th{
+        padding: 5px !important;
+    }
+    /*USER INFO*/
+    #main-user .w3-container{
+        width: 90%;
+    }
+    #c-edit-main form, #u-edit-main form{
+        width: 70%;
+    }
+    #cart{
+        display: block;
+        width: 70%;
+        margin: 10px auto;
+    }
+}

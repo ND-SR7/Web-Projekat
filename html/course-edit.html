@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="../images/favicon.png">
+    <title>Edit Course</title>
+</head>
+<body class="w3-container" onload="editCourse()">
+    <header class="w3-container">
+        <img id="logo" src="../images/Logo.png" alt="NSoftware">
+        <h1>Education Program for Future Programmers</h1>
+    </header>
+    <nav class="w3-container w3-animate-top">
+        <ul class="w3-cell-row w3-round-large">
+            <li class="w3-cell"><a href="./home.html">Home</a></li>
+            <li class="w3-cell"><a href="#" onclick="alert('Select a course from the table on Home tab to access this page');">Course</a></li>
+            <li class="w3-cell"><a href="./admin.html">Admin</a></li>
+            <li class="w3-cell"><a href="./admin.html" onclick="alert('Select an user on Admin tab to access this page');">User Info</a></li>
+            <li class="w3-cell"><a href="./shop-cart.html">Shopping Cart</a></li>
+            <li class="w3-cell" id="nav-login" onclick="document.getElementById('login').style.display='block'">Login</li>
+        </ul>
+    </nav>
+    <div id="login" class="w3-modal w3-animate-opacity">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('login').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h1>Enter login information:</h1>
+            <form class="w3-container">
+                <img src="../images/user.png" alt="user-pic"></img>
+                <input id="login-username" class="w3-input" type="text" name="username">
+                <label>Username</label>
+                <input id="login-password" class="w3-input" type="password" name="password">
+                <label>Password</label>
+                <br><br>
+                <button class="w3-round" type="button" onclick="confirmLogin()">Login</button>
+                <p>No account? Click <span onclick="document.getElementById('register').style.display='block';document.getElementById('login').style.display='none'">here</span> to register</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    <div id="register" class="w3-modal w3-animate-opacity">
+        <div class="w3-modal-content">
+          <div class="w3-container">
+            <span onclick="document.getElementById('register').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+            <h1>Register to gain acces to our courses:</h1>
+            <form class="w3-container">
+                <img src="../images/user.png" alt="user-pic"></img>
+                <input id="fName" class="w3-input" type="text" name="firstName">
+                <label>First Name</label>
+                <input id="lName" class="w3-input" type="text" name="lastName">
+                <label>Last Name</label>
+                <input id="email" class="w3-input" type="email" name="email">
+                <label>Email</label>
+                <br><br><br>
+                <input id="uName" class="w3-input" type="text" name="userName">
+                <label>Username</label>
+                <input id="pass" class="w3-input" type="password" name="pass">
+                <label>Password</label>
+                <br><br><br>
+                <input id="date" class="w3-input" type="date" name="dob">
+                <label>Date of Birth</label>
+                <input id="adress" class="w3-input" type="text" name="adress">
+                <label>Adress</label>
+                <input id="telNum" class="w3-input" type="tel" name="telNum" placeholder="061234567">
+                <label>Telephone Number</label>
+                <br><br>
+                <button class="w3-round" type="button" onclick="confirmRegister()">Register</button>
+                <p>Already have an account? Click <span onclick="document.getElementById('login').style.display='block';document.getElementById('register').style.display='none'">here</span> to log in</p>
+            </form>
+          </div>
+        </div>
+    </div>
+    <main id="c-edit-main" class="w3-container">
+        <h1>Edit Course Information</h1>
+        <form class="w3-container" method="post">
+            <label>ID</label>
+            <input id="inId" class="w3-input in-id" type="text" name="course-id" disabled>
+            <label>Course Name</label>
+            <input id="inName" class="w3-input" type="text" name="course-name">
+            <label>Author</label>
+            <input id="inAuthor" class="w3-input" type="text" name="course-author">
+            <label>Course Description</label>
+            <textarea id="inDesc" class="w3-input" type="" name="course-desc" rows="10"></textarea>
+            <label>Category</label>
+            <select id="inCat" class="w3-input" name="course-cat">
+                <option value="web">Web Development</option>
+                <option value="object">Object Oriented Programming</option>
+                <option value="algo">Algorithms</option>
+                <option value="data">Data Structures</option>
+            </select>
+            <label>Language</label>
+            <select id="inLang" class="w3-input" name="course-lang">
+                <option value="English">English</option>
+                <option value="Serbian">Serbian</option>
+            </select>
+            <label>Date</label>
+            <input id="inDate" class="w3-input" type="date" name="course-date">
+            <label>Rating</label>
+            <input id="inRating" class="w3-input" type="number" name="course-rating" disabled>
+            <label>Number of users who completed this course</label>
+            <input id="inNumUsers" class="w3-input" type="number" name="course-num-users" disabled>
+            <label>Number of lectures</label>
+            <input id="inNumLect" class="w3-input" type="number" name="course-num-lectures" onkeydown="return false;">
+            <p class="green" style="margin-bottom: -5px;"><b>Certified</b></p>
+            <input id="inCertYes" class="w3-radio" type="radio" name="course-certified" value="yes">
+            <label>Yes</label>
+            <input id="inCertNo" class="w3-radio" type="radio" name="course-certified" value="no">
+            <label>No</label>
+            <br><br>
+            <label>Price</label>
+            <input id="inPrice" class="w3-input" type="number" name="course-price">
+            <div class="buttons">
+                <button class="w3-round" id="course-edit-cancel-btn" type="button" onclick="history.back()">Cancel</button>
+                <button class="w3-round" id="course-edit-save-btn" type="button" onclick="confirmCourse()">Save Changes</button>
+            </div>
+            <button type="button" class="delete-btn w3-round" onclick="deleteCourse()">Delete Course</button>
+        </form>
+        <br><br><br><br><br><br><br><br><br><br>
+    </main>
+    <footer class="w3-animate-bottom">
+        <div id="left-foot" class="w3-container">
+            <ul>
+                <li class="w3-cell"><a href="./home.html">Home</a></li>
+                <li class="w3-cell"><a href="./course.html">Course</a></li>
+                <li class="w3-cell"><a href="./course-edit.html" class="active-page">Change Course Info</a></li>
+                <li class="w3-cell"><a href="./admin.html">Admin</a></li>
+                <li class="w3-cell"><a href="./user.html">User Info</a></li>
+                <li class="w3-cell"><a href="./user-edit.html">Change User Info</a></li>
+                <li class="w3-cell"><a href="./shop-cart.html">Shopping Cart</a></li>
+            </ul>
+        </div>
+        <div class="w3-container">
+            <ul>
+                <li class="w3-cell"><br></li>
+                <li class="w3-cell"><br></li>
+                <li class="w3-cell"><br></li>
+                <li class="w3-cell"><br></li>
+                <li class="w3-cell"><br></li>
+                <li id="copyright" class="w3-cell">©Copyright: NSoftware 2021</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../js/editC.js"></script>
+    <script src="../js/logReg.js"></script>
+</body>
+</html>
